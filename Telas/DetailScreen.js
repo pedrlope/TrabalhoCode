@@ -3,12 +3,33 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 const DetailScreen= ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text>Voce esta na Detail Screen</Text>
+      <Text>Voce esta em   </Text>
+      if(usestate True) {
+
+      }
+      else{
+
+      }
       <Button 
-      title= 'Home'
+      title= 'Alugar'
       onPress={() => navigation.navigate("Home")}
 
       />
+      <container>
+        <Text>
+          NOME:
+          
+        </Text>
+        <container>
+        <Text>
+          
+        </Text>
+        </container>
+        <Text>
+        DATA DE NASCIMENTO: DD/MM/AAAA
+        </Text>
+      </container>
+      
     </View>
   )
 }
