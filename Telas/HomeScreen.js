@@ -1,14 +1,13 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
-
+import { Link } from 'react-router-native';
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <div style={styles.container}>
       <Text>Você está na Home Screen</Text>
-      <Button 
-        title="Detalhes"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </View>
+        <Link to ="/DetailScreen">
+        VA A PAGINA Details
+        </Link>
+    </div>
   );
 };
 

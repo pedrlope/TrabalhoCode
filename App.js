@@ -1,27 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { createStaticNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { NativeRouter, BrowserRouter as Router,Route, Link } from "react-native";
 import DetailScreen from './Telas/DetailScreen';
 import HomeScreen from './Telas/HomeScreen';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Stack = createNativeStackNavigator()
-export default function App (){
+
+
+function App (){
   return (
-    <NavigationContainer>
-    <Stack.Navigator>
-    <Stack.Screen 
-     name='Home'
-     component={HomeScreen}
-    />
-     <Stack.Screen
-     name='Details'
-     component={DetailScreen}
-     />
-
-    </Stack.Navigator>
-    </NavigationContainer>
+    <div className= "App">
+    <Router>
+      <Routes style ={styles.container}>
+        <Link to="/Home">
+        </Link>
+    <Route exact path = "/Home" element={<HomeScreen/>}/>
+     <Route path ="/Details" element={<DetailScreen/>}/>
+     </Routes>
+    </Router>
+    </div>
   );
   
 }
@@ -32,5 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10
+  },
+  header: {
+    fontSize: 20
   },
 })
+export default App
