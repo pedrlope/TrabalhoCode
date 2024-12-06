@@ -1,27 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { NativeRouter, BrowserRouter as Router,Route, Link } from "react-native";
-import DetailScreen from './Telas/DetailScreen';
-import HomeScreen from './Telas/HomeScreen';
 import React from "react";
-import ReactDOM from "react-dom";
-
-
+import {Navigate} from "react-router-dom";
+if (<button> </button>)
+var coco = 1;
 
 function App (){
   return (
-    <div className= "App">
-    <Router>
-      <Routes style ={styles.container}>
-        <Link to="/Home">
-        </Link>
-    <Route exact path = "/Home" element={<HomeScreen/>}/>
-     <Route path ="/Details" element={<DetailScreen/>}/>
-     </Routes>
-    </Router>
+    if ( coco ==1 )
+      <div>
+      <Navigate to= "/Home"/>  
+      <button> go to Home</button>
     </div>
   );
-  
 }
 
 const styles = StyleSheet.create({

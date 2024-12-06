@@ -1,18 +1,41 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { Link } from 'react-router-native';
+import { Pressable } from 'react-native';
+import { useState } from 'react';
+ 
 
-const DetailScreen= ({navigation}) => {
+
+function DetailScreen() {
+const [alugar, setAlugar] = useState(false)
+
   return (
-    <div style={styles.container}>
+    <View style={styles.container}>
 
       <Link to = "/HomeScreen"> 
       VA A PAGINA HomeScreen
       </Link> 
-    </div>
-  )
-}
+    
+  
+              <container>
+               NOME:   
+              <container>
 
-export default DetailScreen
+              </container>
+              DATA DE NASCIMENTO: DD/MM/AAAA
+              <Pressable onPress={() => (
+                router.push({
+                    pathname: "Home/[id]",
+                    params: {id: id}
+                })
+            )}>
+                           
+              </Pressable>
+              </container>
+              </View>
+      )
+      }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -22,3 +45,4 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
 });
+export default DetailScreen
