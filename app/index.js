@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import React from "react";
-import {Navigate} from "react-router-dom";
 import react from 'react';
 import { router } from 'expo-router';
 

@@ -7,13 +7,7 @@ if (<button> </button>)
 var coco = 1;
 
 function App (){
-  return (
-    if ( coco ==1 )
-      <div>
-      <Navigate to= "/Home"/>  
-      <button> go to Home</button>
-    </div>
-  );
+  return (<></>)
 }
 
 const styles = StyleSheet.create({

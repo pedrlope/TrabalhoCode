@@ -4,7 +4,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <div style={styles.container}>
       <Text>Você está na Home Screen</Text>
-        <Link to ="/DetailScreen">
+        <Link to ="Telas/DetailScreen">
         VA A PAGINA Details
         </Link>
     </div>

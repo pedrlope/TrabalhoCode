@@ -3,19 +3,22 @@ import { Link } from 'react-router-native';
 import { Pressable } from 'react-native';
 import { useState } from 'react';
 import { TextInput } from 'react-native-web';
+import { router } from 'expo-router';
 
 
 
 function DetailScreen() {
   const [alugar, setAlugar] = useState(false)
   const [dataNasc, setdataNasc] = useState(0);
-
+  const [nome, setNome] = useState("");
 
   const Cadastro = () => {
-    setAlugar(false);
+
     if (dataNasc <= 1960 && nome != "") {
       setAlugar = (true);
-
+      router.push({
+        pathname: "Telas/HomeScreen",
+      })
     }
     else {
       setAlugar = (false);
@@ -26,33 +29,35 @@ function DetailScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.label}> NOME: </Text>
-      
-      <TextInput
-       
 
-        /> 
+      <TextInput
+        style={styles.input}
+        placeholder="Nome"
+        value={nome}
+        onChangeText={setNome}
+      />
 
       <View style={styles.container2}>
-      <Text style={styles.label2}> ANO DE NASCIMENTO: AAAA </Text>
+        <Text style={styles.label2}> ANO DE NASCIMENTO: AAAA </Text>
 
-      <TextInput
-       
-
+        <TextInput
+          style={styles.input2}
+          placeholder="Ano de nascimento"
+          value={dataNasc}
+          onChangeText={setdataNasc}
         />
 
-      {
-        alugar ?
-          <Pressable onPress={() => (
-            router.push({
-              pathname: "HomeScreen",
-              params: { id: id }
-            })
-          )}>
-            
-          </Pressable>
-          : <></>
-      }
-    </View>
+        {
+          alugar ?
+            <Pressable 
+              title='alugar'
+              color='darkgreen'
+              onPress={() => ( Cadastro() 
+            )}>
+            </Pressable>
+            : <></>
+        }
+      </View>
     </View>
   )
 }
@@ -83,6 +88,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margemBottom: 8
 
+  },
+  input: {
+    borderWitdth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+    marginBottom: 16
+  },
+  input2: {
+    borderWitdth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+    marginBottom: 16
   },
 });
 export default DetailScreen
