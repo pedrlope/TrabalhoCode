@@ -47,16 +47,13 @@ function DetailScreen() {
           onChangeText={setdataNasc}
         />
 
-        {
-          alugar ?
+      
             <Pressable 
               title='alugar'
               color='darkgreen'
               onPress={() => ( Cadastro() 
             )}>
-            </Pressable>
-            : <></>
-        }
+            </Pressable>  
       </View>
     </View>
   )
